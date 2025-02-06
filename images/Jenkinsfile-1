@@ -17,6 +17,15 @@ pipeline {
            }
         }
 
+        stage('Packer Initialaization'){
+                steps {
+                    sh '''
+                        /usr/bin/packer init
+                    '''
+                    }
+                }
+        
+
         stage('Packer AMI Build'){
              steps {
                  sh '''
