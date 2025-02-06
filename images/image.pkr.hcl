@@ -1,3 +1,13 @@
+packer {
+  required_plugins {
+    amazon = {
+      version = ">= 1.2.0"
+      source  = "github.com/hashicorp/amazon"
+    }
+  }
+}
+
+
 variable "aws_source_ami" {
   default = "amzn2-ami-hvm-2.0.20210326.0-x86_64-gp2"
 }
