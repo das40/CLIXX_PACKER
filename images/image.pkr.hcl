@@ -9,8 +9,8 @@ packer {
 
 
 variable "aws_source_ami" {
-  #default = "amzn2-ami-hvm-2.0.20210326.0-x86_64-gp2"
-  default = "amzn2-ami-kernel-5.10-hvm-2.0.20250116.0-x86_64-gp2"
+  default = "amzn2-ami-hvm-2.0.20210326.0-x86_64-gp2"
+  #default = "amzn2-ami-kernel-5.10-hvm-2.0.20250116.0-x86_64-gp2"
 }
 
 variable "aws_instance_type" {
@@ -18,7 +18,7 @@ variable "aws_instance_type" {
 }
 
 variable "ami_name" {
-  default = "ami-stack-51"
+  default = "ami-stack-golden-image-01"
 }
 
 variable "component" {
@@ -29,7 +29,7 @@ variable "component" {
 variable "aws_accounts" {
   type = list(string)
   # default= ["577701061234","560089993749"]
-  default= ["577638355526"]
+  default= ["577638355526","619071313311"]
 }
 
 variable "ami_regions" {
@@ -46,7 +46,7 @@ data "amazon-ami" "source_ami" {
     name = "${var.aws_source_ami}"
   }
   most_recent = true
-  owners      = ["682033500051","amazon"]
+  owners      = ["336528460023","amazon"]
   region      = "${var.aws_region}"
 }
 
@@ -63,7 +63,7 @@ data "amazon-ami" "source_ami" {
 
 source "amazon-ebs" "amazon_ebs" {
   # assume_role {
-  #   role_arn     = "arn:aws:iam::577638355526:role/Engineer"
+  #   role_arn     = "arn:aws:iam::560089993749:role/Engineer"
   # }
   ami_name                = "${var.ami_name}"
   ami_regions             = "${var.ami_regions}"
