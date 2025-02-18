@@ -9,8 +9,8 @@ packer {
 
 
 variable "aws_source_ami" {
-  default = "amzn2-ami-hvm-2.0.20210326.0-x86_64-gp2"
-  #default = "amzn2-ami-kernel-5.10-hvm-2.0.20250116.0-x86_64-gp2"
+  #default = "amzn2-ami-hvm-2.0.20210326.0-x86_64-gp2"
+  default = "amzn2-ami-kernel-5.10-hvm-2.0.20250116.0-x86_64-gp2"
 }
 
 variable "aws_instance_type" {
